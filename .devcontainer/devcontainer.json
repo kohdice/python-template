@@ -1,0 +1,65 @@
+{
+  "name": "Python",
+  "dockerComposeFile": "../docker/docker-compose.yml",
+  "postCreateCommand": "bash ./docker/entrypoint.sh",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.colorTheme": "One Dark Pro",
+        "workbench.iconTheme": "material-icon-theme",
+        "editor.fontFamily": "Hack Nerd Font",
+        "terminal.integrated.fontFamily": "Hack Nerd Font",
+        "[python]": {
+          "editor.tabSize": 4,
+          "editor.formatOnSave": true
+        },
+        "python.formatting.provider": "black",
+        "python.formatting.blackArgs": [
+          "--line-length=79"
+        ],
+        "editor.rulers": [
+          50,
+          79
+        ],
+        "python.linting.lintOnSave": true,
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": false,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": [
+          "--max-line-length=79",
+          "--ignore=E203, W503",
+          "--max-complexity=10"
+        ],
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": true
+        },
+        "python.linting.mypyEnabled": true,
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": [
+          "tests"
+        ],
+        "autoDocstring.docstringFormat": "google",
+        "dotfiles.repository": "kohdice/dotfiles-devcontainer",
+        "dotfiles.targetPath": "~/dotfiles",
+        "dotfiles.installCommand": "~/dotfiles/install.sh"
+      },
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "donjayamanne.githistory",
+        "ms-python.python",
+        "njpwerner.autodocstring",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "mikestead.dotenv",
+        "yzhang.markdown-all-in-one",
+        "sohamkamani.code-eol",
+        "streetsidesoftware.code-spell-checker",
+        "gruntfuggly.todo-tree"
+      ]
+    }
+  }
+}
