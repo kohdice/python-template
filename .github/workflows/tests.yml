@@ -1,0 +1,21 @@
+name: Continuous Integration of container building
+
+run-name: ${{ github.actor }} is testing out container building
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Build container
+        run: |
+          docker-compose -f docker/docker-compose.yml up -d --build
