@@ -36,7 +36,7 @@ jobs:
       - name: Poetry Install Dependencies
         run: |
           poetry install
-      - uses: tsuyoshicho/action-mypy@v3
+      - uses: tsuyoshicho/action-mypy@v4
         with:
           reporter: github-pr-review
           level: warning
